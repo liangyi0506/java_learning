@@ -1,0 +1,26 @@
+<!-- xml 方式写sql语句 -->
+<!-- mybatis规定了如何写sql语句-->
+<!DOCTYPE mapper
+        PUBLIC "-//mabatis.org//DTO Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangyi.mapper.EmployeeMapper">
+
+    <select id="findById" resultMap="com.liangyi.pojo.Employee">
+        select emp_id empID,
+               emp_name empName,
+               emp_salary empSalary,
+        from
+            t_emp
+        where
+            emp_id = #{empID}
+    </select>
+
+    <delete id="deleteById" >
+        delete
+            *
+        from
+            t_emp
+        where emp_id = #{empID}
+
+    </delete>
+</mapper>
