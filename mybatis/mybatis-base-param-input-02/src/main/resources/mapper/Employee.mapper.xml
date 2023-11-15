@@ -1,0 +1,48 @@
+<!-- xml 方式写sql语句 -->
+<!-- mybatis规定了如何写sql语句-->
+<!DOCTYPE mapper
+        PUBLIC "-//mabatis.org//DTO Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangyi.mapper.EmployeeMapper">
+
+    <select id="findById" resultType="com.liangyi.pojo.Employee">
+        select emp_id empId,
+               emp_name empName,
+               emp_salary empSalary
+        from
+            t_emp
+        where
+<!--            emp_id = ${empId}-->
+        emp_id = #{empId}
+    </select>
+
+    <delete id="deleteById" >
+        delete
+        from
+            t_emp
+        where emp_id = #{empID}
+    </delete>
+
+    <!-- 插入单个实体类的时候,连对象名都不能加,加了会报错,直接写属性值即可   -->
+    <insert id="insertEmployee">
+        insert into t_emp(emp_name, emp_salary) values(#{empName}, #{empSalary})
+    </insert>
+
+    <!-- 多个简单类型插入 -->
+    <!-- 1. 在不指定名称的时候,直接写参数名即可 -->
+    <!-- 2. 使用@param("指定的名称")的时候直接使用指定的名称 -->
+    <!-- 3. 在不不指定的时候,还可以根据参数的顺序去表示参数arg0, arg1...-->
+
+    <select id="findByIdAndName" resultType="com.liangyi.pojo.Employee">
+        select
+            emp_id empId,
+            emp_name empName,
+            emp_salary empSalary
+        from
+            t_emp
+        where
+            emp_id = #{id}
+            and
+            emp_name = #{name}
+    </select>
+</mapper>

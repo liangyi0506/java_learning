@@ -27,7 +27,7 @@ public class MybatisTest {
         // 2. 使用SqlSessionFactory开启一个会话
         SqlSession session = factory.openSession();
 
-        // 3. 根据EmployeeMapper接口的class对象获取Mapper接口类型的对象
+        // 3. 根据EmployeeMapper接口的class对象获取Mapper接口类型的对象(这是典型的Mybatis方式)
         EmployeeMapper employeeMapper = session.getMapper(EmployeeMapper.class);
 
         Employee employee = employeeMapper.findById(3);
