@@ -3,6 +3,9 @@ package com.liangyi.mapper;
 import com.liangyi.pojo.Employee;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Map;
+import java.util.Objects;
+
 public interface EmployeeMapper {
 
     // 根据id 查询职员
@@ -16,4 +19,7 @@ public interface EmployeeMapper {
 
     // 根据id和name查询一个Employee
     Employee findByIdAndName(@Param("id") Integer empId, @Param("name") String empName);
+
+    // 询工资最高的员工的姓名和工资,以及部门的平均工资
+    Map<String , Object> selectEmpNameAndMaxSalary();
 }

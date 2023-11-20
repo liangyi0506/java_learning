@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
+import java.util.Objects;
 
 public class MyBatisTest {
 
@@ -95,6 +97,35 @@ public class MyBatisTest {
 
         // 6. 展示查询
         System.out.println(label);
+
+        // 7. 提交查询
+        sqlSession.commit();
+
+        // 8. 关闭Session
+        sqlSession.close();
+
+    }
+
+    @Test
+    public void testMybatis04() throws IOException{
+        // 1. 读取配置文件
+        String configFilePath = "mybatis-config.xml";
+        InputStream resourceAsStream = Resources.getResourceAsStream(configFilePath);
+
+        // 2. 创建SqlSessionFactory类
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+
+        // 3. 创建SqlSession
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        // 4. 读取mapper
+        EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+
+        // 5. 执行sql插入命令
+       Map<String, Object> map = mapper.selectEmpNameAndMaxSalary();
+
+        // 6. 展示查询
+        System.out.println(map.toString());
 
         // 7. 提交查询
         sqlSession.commit();
