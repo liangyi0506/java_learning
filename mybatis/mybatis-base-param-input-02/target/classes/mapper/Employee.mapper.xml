@@ -25,7 +25,7 @@
 
     <!-- 插入单个实体类的时候,连对象名都不能加,加了会报错,直接写属性值即可   -->
     <insert id="insertEmployee">
-        insert into t_emp1(emp_name, emp_salary) values(#{empName}, #{empSalary})
+        insert into t_emp(emp_name, emp_salary) values(#{empName}, #{empSalary})
     </insert>
 
     <!-- 多个简单类型插入 -->
