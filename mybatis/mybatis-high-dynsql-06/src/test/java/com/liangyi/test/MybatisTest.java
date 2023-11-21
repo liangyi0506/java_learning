@@ -30,6 +30,7 @@ public class MybatisTest {
 
         // 5. 执行语句
         Employee employee = new Employee();
+        employee.setEmpId(1);
         List<Employee> employeeList = mapper.findByParams(employee);
 
         System.out.println("____________\n" + employeeList);

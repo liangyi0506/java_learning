@@ -16,15 +16,15 @@
         where
             1=1
         <if test="form.empId != null and form.empId != ''">
-            and where emp_id = #{form.empId}
+            and emp_id = #{form.empId}
         </if>
 
         <if test="form.empName != null and form.empName != ''">
-            and where emp_name = #{form.empName}
+            and emp_name = #{form.empName}
         </if>
 
         <if test="form.empSalary != null and form.empSalary != ''">
-            and where emp_salary = #{form.empSalary}
+            and emp_salary = #{form.empSalary}
         </if>
 
         order by emp_salary ASC
