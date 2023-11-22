@@ -6,7 +6,7 @@
 
 
 <configuration>
-    <!-- configuration 配置的顺序 -->
+    <!-- configuration 配置的顺序有讲究 -->
     <properties resource="jdbc.properties" />
     <!-- 开启了mybatis的log输出 -->
     <settings>

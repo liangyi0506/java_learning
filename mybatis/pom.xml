@@ -12,6 +12,8 @@
         <module>mybatis-base-quick-01</module>
         <module>mybatis-base-param-input-02</module>
         <module>mybatis-high-dynsql-06</module>
+        <module>mybatis-extra-sql-07</module>
+        <module>mybatis-extra-sql-08</module>
     </modules>
 
     <dependencies>
@@ -40,7 +42,13 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.3.1</version>
         </dependency>
+
+        <!-- 分页插件的依赖 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.1.11</version>
+        </dependency>
+
     </dependencies>
-
-
 </project>

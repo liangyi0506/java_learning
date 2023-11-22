@@ -1,0 +1,32 @@
+<!-- xml 方式写sql语句 -->
+<!-- mybatis规定了如何写sql语句-->
+<!DOCTYPE mapper
+        PUBLIC "-//mabatis.org//DTO Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangyi.mapper.EmployeeMapper">
+
+    <!-- 使用动态sql 来写Sql语句 -->
+    <select id="findByParams" resultType="com.liangyi.pojo.Employee">
+        select
+        emp_id empId,
+        emp_name empName,
+        emp_salary empSalary
+        from
+        t_emp
+        where
+        1=1
+        <if test="form.empId != null and form.empId != ''">
+            and emp_id = #{form.empId}
+        </if>
+
+        <if test="form.empName != null and form.empName != ''">
+            and emp_name = #{form.empName}
+        </if>
+
+        <if test="form.empSalary != null and form.empSalary != ''">
+            and emp_salary = #{form.empSalary}
+        </if>
+
+        order by emp_salary ASC
+    </select>
+</mapper>

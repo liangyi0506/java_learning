@@ -7,7 +7,7 @@
 
 <configuration>
     <!-- configuration 配置的顺序有讲究 -->
-    <properties resource="jdbc.properties" />
+    <!--    <properties resource="jdbc.properties" />-->
     <!-- 开启了mybatis的log输出 -->
     <settings>
         <setting name="logImpl" value="STDOUT_LOGGING"/>
@@ -18,7 +18,7 @@
             <dataSource type="POOLED">
                 <!-- 建立数据库的配置信息-->
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis-example"/>
+                <property name="url" value="jdbc:mysql://121.36.202.134:3306/mybatis-example?serverTimeZone=Asia/Shanghai&amp;characterEncoding=UTF-8&amp;useSSL=false"/>
                 <property name="username" value="ly"/>
                 <property name="password" value="Liangyi.1"/>
             </dataSource>
@@ -26,7 +26,10 @@
     </environments>
     <mappers>
         <!-- mapper.xml文件在class路径下的路径 -->
-        <mapper resource="mapper/Employee.mapper.xml"/>
+<!--        <mapper resource="com/liangyi/mapper/EmployeeMapper.xml"/>-->
+        
+        <!-- 批量打包 -->
+        <package name="com/liangyi/mapper"/>
     </mappers>
 
 </configuration>
