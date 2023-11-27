@@ -7,11 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-tx-annotation-12" />
         <module name="mybatis-base-param-input-02" />
         <module name="mybatis-high-dynsql-06" />
         <module name="SpringIoC" />
-        <module name="springmvc-base-input-02" />
+        <module name="tx" />
         <module name="quartz" />
+        <module name="aop-test-advice" />
         <module name="mybatis-extra-sql-08" />
         <module name="mybatis-base-quick-01" />
         <module name="mybatis-extra-sql-07" />
@@ -21,7 +23,7 @@
     <bytecodeTargetLevel>
       <module name="quartzapp" target="1.8" />
       <module name="springboot-base-quick-01" target="1.8" />
-      <module name="ssm-springmvc-part" target="17" />
+      <module name="untitledAOP" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

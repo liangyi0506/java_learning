@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+
 @Configuration
 @ComponentScan("com.liangyi")
 public class MvcConfig {
@@ -16,8 +17,6 @@ public class MvcConfig {
     public RequestMappingHandlerMapping handlerMapping(){
         return new RequestMappingHandlerMapping();
     }
-
-
 
     @Bean
     public RequestMappingHandlerAdapter handlerAdapter(){
