@@ -33,6 +33,5 @@ public class TestAOP {
 
         System.out.println(StringUtils.join(studentList, ",\n"));
 
-        IPage<Student> page = null;
     }
 }
