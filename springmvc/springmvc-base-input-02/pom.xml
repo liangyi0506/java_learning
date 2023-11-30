@@ -8,10 +8,52 @@
     <version>1.0-SNAPSHOT</version> 
   </parent>  
   <artifactId>springmvc-base-input-02</artifactId>  
-  <packaging>pom</packaging>
+  <packaging>war</packaging>  
   <properties> 
     <maven.compiler.source>17</maven.compiler.source>  
     <maven.compiler.target>17</maven.compiler.target>  
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
-  </properties> 
+  </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- 不添加该依赖，运行会报错： ClassNotFound Exception : com.sun.ws.rs.ext.RuntimeDelegateImpl -->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-servlet</artifactId>
+            <version>1.19</version>
+        </dependency>
+
+
+    </dependencies>
+
+
 </project>

@@ -9,6 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @SpringJUnitConfig(IoCConfig.class)
@@ -30,8 +31,10 @@ public class TestAOP {
         studentList.add(stu1);
         studentList.add(stu2);
         studentList.add(stu3);
-
+        HashMap<String, Student> paramsMap = new HashMap<>();
+        paramsMap.put("1", stu1);
         System.out.println(StringUtils.join(studentList, ",\n"));
+        System.out.println(paramsMap);
 
     }
 }
