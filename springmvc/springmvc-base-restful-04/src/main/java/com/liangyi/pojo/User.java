@@ -4,14 +4,14 @@ import lombok.Data;
 
 @Data
 public class User {
-    private String userID;
-    private String username;
+    private String userId;
+    private String userName;
 
     public User(){
 
     }
-    public User(String userID, String username){
-        this.userID = userID;
-        this.username = username;
+    public User(String userId, String userName){
+        this.userId = userId;
+        this.userName = userName;
     }
 }

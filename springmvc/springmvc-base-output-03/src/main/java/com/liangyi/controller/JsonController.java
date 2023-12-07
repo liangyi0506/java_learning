@@ -25,6 +25,7 @@ public class JsonController {
     public Student returnStu(@RequestBody Student student){
 
         System.out.println(student);
+        student.setStuID("234567");
         return student;
     }
 

@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.liangyi</groupId>
-        <artifactId>springmvc</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
 
-    <artifactId>springmvc-base-restful-04</artifactId>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+  <modelVersion>4.0.0</modelVersion>  
+  <parent> 
+    <groupId>com.liangyi</groupId>  
+    <artifactId>springmvc</artifactId>  
+    <version>1.0-SNAPSHOT</version> 
+  </parent>  
+  <artifactId>springmvc-base-restful-04</artifactId>  
+  <packaging>war</packaging>
+  <properties> 
+    <maven.compiler.source>17</maven.compiler.source>  
+    <maven.compiler.target>17</maven.compiler.target>  
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
+  </properties>  
+  <dependencies> 
+    <!-- 增加mybatis的依赖 -->  
+    <dependency> 
+      <groupId>org.mybatis</groupId>  
+      <artifactId>mybatis</artifactId>  
+      <version>3.5.11</version> 
+    </dependency>  
+    <!-- MySQL驱动 mybatis底层依赖jdbc驱动实现,不需要引入连接池,mybatis自带 -->  
+    <dependency> 
+      <groupId>mysql</groupId>  
+      <artifactId>mysql-connector-java</artifactId>  
+      <version>8.0.25</version> 
+    </dependency>  
+    <!-- 分页插件的依赖 -->  
+    <dependency> 
+      <groupId>com.github.pagehelper</groupId>  
+      <artifactId>pagehelper</artifactId>  
+      <version>5.1.11</version> 
+    </dependency>  
+    <dependency> 
+      <groupId>org.projectlombok</groupId>  
+      <artifactId>lombok</artifactId>  
+      <version>1.18.30</version>  
+      <scope>compile</scope> 
+    </dependency>
+    <!-- 支持json的依赖 -->
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-core-asl</artifactId>
+      <version>1.9.13</version>
+    </dependency>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <dependencies>
-        <!-- 增加mybatis的依赖 -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.5.11</version>
-        </dependency>
-        <!-- MySQL驱动 mybatis底层依赖jdbc驱动实现,不需要引入连接池,mybatis自带 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.25</version>
-        </dependency>
-        <!-- 分页插件的依赖 -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>5.1.11</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
-            <scope>compile</scope>
-        </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.9.13</version>
+    </dependency>
 
 
-    </dependencies>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.15.0</version>
+    </dependency>
+  </dependencies> 
 </project>

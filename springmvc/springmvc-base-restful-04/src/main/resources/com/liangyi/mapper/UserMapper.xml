@@ -5,28 +5,47 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.liangyi.mapper.UserMapper">
 
-    <!-- 使用动态sql 来写Sql语句 -->
-    <select id="findByParams" resultType="com.liangyi.pojo.User">
+    <!-- 根据Id查询user -->
+    <select id="searchUserById" resultType="com.liangyi.pojo.User">
         select
-        emp_id empId,
-        emp_name empName,
-        emp_salary empSalary
+            user_id userId,
+            user_name userName
         from
-        t_emp
+            user
         where
-        1=1
-        <if test="form.empId != null and form.empId != ''">
-            and emp_id = #{form.empId}
-        </if>
+            user_id = #{userId}
+    </select>
 
-        <if test="form.empName != null and form.empName != ''">
-            and emp_name = #{form.empName}
-        </if>
+    <!-- 根据Id删除User -->
+    <delete id="deleteUserById">
+        delete
+            from user
+        where
+            user_id = #{userId}
+    </delete>
 
-        <if test="form.empSalary != null and form.empSalary != ''">
-            and emp_salary = #{form.empSalary}
-        </if>
+    <!-- 根据Id修改user -->
+    <update id="updateUserById">
+        update
+            user
+        set user_name = #{userName}
+        where
+            user_id = #{userId}
+    </update>
 
-        order by emp_salary ASC
+    <!-- 根据Id增加user -->
+    <insert id="addUser">
+        insert
+            into user
+        values(#{form.userId}, #{form.userName})
+    </insert>
+
+    <!-- 查询user列表 -->
+    <select id="searchUserPage" resultType="com.liangyi.pojo.User">
+        select
+            user_id userId,
+            user_name userName
+        from
+            user
     </select>
 </mapper>
