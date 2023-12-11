@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+
+<configuration>
+    <!-- configuration 配置的顺序有讲究 -->
+<!--    <properties resource="jdbc.properties" />-->
+    <!-- 开启了mybatis的log输出 -->
+    <settings>
+        <!-- 开启驼峰映射 -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+        <!-- 开启logback日志输出 -->
+        <setting name="logImpl" value="SLF4J"/>
+        <!-- 开启resultMap自动映射 -->
+        <setting name="autoMappingBehavior" value="FULL"/>
+    </settings>
+<!--    <environments default="development">-->
+<!--        <environment id="development">-->
+<!--            <transactionManager type="JDBC" />-->
+<!--            <dataSource type="POOLED">-->
+<!--                &lt;!&ndash; 建立数据库的配置信息&ndash;&gt;-->
+<!--                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://121.36.202.134:3306/mybatis-example?serverTimeZone=Asia/Shanghai&amp;characterEncoding=UTF-8&amp;useSSL=false"/>-->
+<!--                <property name="username" value="ly"/>-->
+<!--                <property name="password" value="Liangyi.1"/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+<!--    </environments>-->
+<!--    <mappers>-->
+<!--        &lt;!&ndash; mapper.xml文件在class路径下的路径 &ndash;&gt;-->
+<!--        <mapper resource="mapper/Employee.mapper.xml"/>-->
+<!--    </mappers>-->
+    <plugins>
+        <!-- 分页查询支持插件 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
+</configuration>
