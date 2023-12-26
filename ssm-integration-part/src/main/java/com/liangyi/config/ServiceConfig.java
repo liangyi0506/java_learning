@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -24,6 +25,7 @@ import java.io.InputStream;
 @Configuration
 @EnableAspectJAutoProxy // 开启aop注解的支持
 @EnableTransactionManagement // 开启事务管理器支持: 1. 对应的事务管理器实现[TransactionManager DataSourceManager Hibernate jpa]
+@ComponentScan("com.liangyi.service")
 public class ServiceConfig {
 
 
