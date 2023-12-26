@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- configuration 配置的顺序有讲究 -->
+    <!-- properties resource="jdbc.properties" / -->
+    <!-- 开启了mybatis的log输出 -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!-- 配置分页插件 -->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helpDialect" value="mysql"/>
+        </plugin>
+    </plugins>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <!-- 建立数据库的配置信息-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://121.36.202.134:3306/mybatis-example?serverTimeZone=Asia/Shanghai&amp;characterEncoding=UTF-8&amp;useSSL=false"/>
+                <property name="username" value="ly"/>
+                <property name="password" value="Liangyi.1"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!-- mapper.xml文件在class路径下的路径 -->
+        <package name="com/liangyi/mapper"/>
+    </mappers>
+
+</configuration>
