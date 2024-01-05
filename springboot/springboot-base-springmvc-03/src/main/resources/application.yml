@@ -1,0 +1,9 @@
+# 配置服务的端口号
+server:
+  port: 12901
+
+# 配置静态资源的位置
+#spring:
+#  web:
+#    resources:
+#      static-locations: classpath:/webResources
