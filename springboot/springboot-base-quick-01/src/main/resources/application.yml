@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  port: 12902
+  servlet:
+    context-path: /boot1
+
+say:
+  hello:
+    speak: hello1
+
+user:
+  userName: liangyi
+  userAge: 12
+  gender: male
+  hobbies:
+    - soccer
+    - basketball
+    - PingPang
+
