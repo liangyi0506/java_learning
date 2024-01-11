@@ -1,5 +1,6 @@
 package com.liangyi.test;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.liangyi.mapper.UserMapper;
@@ -23,10 +24,10 @@ public class SpringBootMybatisPlusTest {
     private IEmpService empService;
     @Test
     public void test(){
-        Page<User> page = new Page<>(1, 3);
-        IPage<User> userIPage = userMapper.selectPageUserVo(page, 30);
+        User user = new User();
 
-        System.out.println(userIPage.getRecords());
+        user.setUserName("土地公");
+        userMapper.update(user, null);
 
     }
 }
