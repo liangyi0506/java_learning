@@ -19,9 +19,10 @@ spring:
 
     # Druid的其他属性配置 springboot3整合情况下,数据库连接信息必须在Druid属性下!
     druid:
-      url: jdbc:mysql://121.36.202.134:3306/mybatis_plus_example?serverTimeZone=Asia/Shanghai&characterEncoding=UTF-8
-      username: ly
-      password: Liangyi.1
+#      url: jdbc:mysql://121.36.202.134:3306/mybatis_plus_example?serverTimeZone=Asia/Shanghai&characterEncoding=UTF-8
+      url: jdbc:mysql://localhost:12306/mybatis_plus_example?serverTimeZone=Asia/Shanghai&characterEncoding=UTF-8
+      username: root
+      password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
       # 初始化时建立物理连接的个数
       initial-size: 5
